@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header";
+import Form from "./components/Form";
+import Result from "./components/Result";
+import Loading from "./components/Loading";
+import Error from "./components/Error";
+import useFetch from "./hooks/useFetch";
 
 function App() {
+  const { isLoading, error, data, submitRequestToFetchAPI, city } = useFetch();
+
+  // when a search button is clicked
+  const handleSearch = (searchInput) => {
+    submitRequestToFetchAPI(searchInput);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header></Header>
+
+      <div
+        id="body"
+        className="container bg-dark border border-success shadow-lg text-white py-5 px-5"
+      >
+        <Form handleSearch={handleSearch}></Form>
+
+        {data && <Result result={data} city={city} />}
+        {isLoading && <Loading />}
+        {error && <Error />}
+      </div>
     </div>
   );
 }
