@@ -1,12 +1,15 @@
-#Problems:
+# Problems:
+
 Users provide a valid city name to get the weather information.
 Provide nice UI using Bootstrap.
 
-#What I learned:
+# What I learned:
+
 Utilizing a free weather API from RapidAPI for weather information.
 All the web elements are styled by CSS and Bootstrap to provide better UI.
 
-#Reflex:
+# Reflex:
+
 this project helps me to practice my skill with bootstrap and learn to interact with 3rd party API using javascript.
 
 ## Available Scripts
