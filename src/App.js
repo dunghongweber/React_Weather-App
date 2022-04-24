@@ -21,7 +21,7 @@ function App() {
         id="body"
         className="container bg-dark border border-success shadow-lg text-white py-5 px-5"
       >
-        <Form handleSearch={handleSearch}></Form>
+        <Form handleSearch={handleSearch} isLoading={!isLoading}></Form>
 
         {data && <Result result={data} city={city} />}
         {isLoading && <Loading />}

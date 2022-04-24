@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Form = ({ handleSearch }) => {
+const Form = ({ handleSearch, isLoading }) => {
   const [searchInput, setSearchInput] = useState("");
 
   const onSubmit = (e) => {
@@ -26,6 +26,7 @@ const Form = ({ handleSearch }) => {
               className="btn btn-primary"
               type="submit"
               id="button-addon2"
+              disabled={!isLoading}
             >
               Search
             </button>
